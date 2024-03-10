@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AutomatedReportProcessing" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="698,2582" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AutomatedReportProcessing" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="698,2597" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>GlobalConstantsNamespace</x:String>
@@ -129,22 +129,14 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="AUTOMATED PROCESS INFOMARTION:&#xD;&#xA;&#xD;&#xA;- Process title: AutomatedReportProcessing&#xD;&#xA;&#xD;&#xA;- Process description: Essa automação visa otimizar o processo de recebimento e armazenamento de relatórios, além de fornecer uma confirmação automática aos remetentes.&#xD;&#xA;&#xD;&#xA;-------------------------------------------------------&#xD;&#xA;ADDITIONAL INFORMATION:&#xD;&#xA;&#xD;&#xA;- Developers:&#xD;&#xA;       •  Leticia Cruz (leticiacruzs@outlook.com.br)" DisplayName="AutomatedReportProcessing" sap:VirtualizedContainerService.HintSize="708,2517" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="&#xA;AUTOMATED PROCESS INFOMARTION:&#xA;&#xA;- Process title: AutomatedReportProcessing&#xA;&#xA;- Process description: Essa automação visa otimizar o processo de recebimento e armazenamento de relatórios, além de fornecer uma confirmação automática aos remetentes.&#xA;&#xA;-------------------------------------------------------&#xA;ADDITIONAL INFORMATION:&#xA;&#xA;- Developers:&#xA;       •  Leticia Cruz (leticiacruzs@outlook.com.br)" DisplayName="AutomatedReportProcessing" sap:VirtualizedContainerService.HintSize="708,2532" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listMail" />
       <Variable x:TypeArguments="x:String" Name="mailBody" />
       <Variable x:TypeArguments="x:Int32" Name="index" />
       <Variable x:TypeArguments="x:String" Default="Relatório Diário" Name="subject" />
-      <Variable x:TypeArguments="x:Int32" Name="numberEmails">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="11" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="account">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">leticiacruzs@outlook.com.br</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="11" Name="numberEmails" />
+      <Variable x:TypeArguments="x:String" Default="leticiacruzs@outlook.com.br" Name="account" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -163,14 +155,14 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Send outlook mail message - report" sap:VirtualizedContainerService.HintSize="354,186" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[subject]" To="[userMail]">
+          <ui:SendOutlookMail Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="[account]" DisplayName="Send outlook mail message - report" sap:VirtualizedContainerService.HintSize="354,186" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[subject]" To="[userMail]">
             <ui:SendOutlookMail.Files>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                 <InArgument x:TypeArguments="x:String">Data\Modelo.pdf</InArgument>
               </scg:List>
             </ui:SendOutlookMail.Files>
           </ui:SendOutlookMail>
-          <Delay DisplayName="Delay seven minutes" Duration="00:07:00" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <Delay DisplayName="Delay seven minutes" Duration="00:07:00" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Delay_2" />
         </Sequence>
       </ui:InterruptibleWhile.Body>
     </ui:InterruptibleWhile>
@@ -223,7 +215,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Throw DisplayName="Throw BRE - Validation number of .pdf attachments" Exception="[New BusinessRuleException(String.Format(&quot;A quantidade de anexos difere do padrão esperado. Esperava-se anexar 1 pdf, mas foram anexadas {0} planilhas.&quot;,pathAttachmentPedidos.Count.ToString))]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1">
+                        <Throw DisplayName="Throw BRE - Validation number of .pdf attachments" Exception="[New BusinessRuleException(String.Format(&quot;A quantidade de anexos difere do padrão esperado. Esperava-se anexar 1 pdf, mas foram anexadas {0} arquivos.&quot;,pathAttachmentPedidos.Count.ToString))]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -290,7 +282,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="[mailBody]" DisplayName="Reply to email" sap:VirtualizedContainerService.HintSize="354,141" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_1" MailMessage="[mail]" ReplyAll="False">
+                  <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="[mailBody]" DisplayName="Reply to email" sap:VirtualizedContainerService.HintSize="354,141" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_1" MailMessage="[mail]" ReplyAll="True">
                     <ui:ReplyToOutlookMailMessage.Files>
                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                     </ui:ReplyToOutlookMailMessage.Files>
